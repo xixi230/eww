@@ -6,7 +6,7 @@ on:
 
 jobs:
   build:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-20.04
     
     steps:
     - uses: actions/checkout@v4
@@ -29,6 +29,7 @@ jobs:
       run: |
         ls -la target/release/eww
         file target/release/eww
+        ldd target/release/eww
     
     - name: Upload eww binary
       uses: actions/upload-artifact@v4
